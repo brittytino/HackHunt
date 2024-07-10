@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const keywordContainer = document.getElementById('keyword-container');
     const keywordElement = document.getElementById('keyword');
     const navigationButtonsContainer = document.getElementById('navigation-buttons');
+    const copyButton = document.getElementById('copy-button');
 
     function showQuestion(index) {
         currentQuestionIndex = index;
@@ -81,6 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
         answerInput.value = '';
         answerInput.focus();
         keywordContainer.classList.add('hidden');
+        keywordContainer.classList.remove('animate__fadeInDown');
+    }
+
+    function copyToClipboard(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
     }
 
     submitButton.addEventListener('click', () => {
@@ -88,8 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userAnswer.toLowerCase() === questions[currentQuestionIndex].answer.toLowerCase()) {
             keywordElement.textContent = questions[currentQuestionIndex].keyword;
             keywordContainer.classList.remove('hidden');
+            keywordContainer.classList.add('animate__fadeInDown');
             if (attempts === 0) {
-                // First attempt correct
                 Swal.fire({
                     icon: 'success',
                     title: 'Excellent!',
@@ -102,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             } else if (attempts === 1) {
-                // Second attempt correct
                 Swal.fire({
                     icon: 'success',
                     title: 'Well Done!',
@@ -115,11 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             }
-            attempts = 0; // Reset attempts for the next question
+            attempts = 0;
         } else {
             attempts++;
             if (attempts >= maxAttempts) {
-                // Funny alert with animation
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -132,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         popup: 'animate__animated animate__bounceOut'
                     }
                 });
-                attempts = 0; // Reset attempts for the next question
+                attempts = 0;
             } else {
                 Swal.fire({
                     icon: 'warning',
@@ -149,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Create navigation buttons
     questions.forEach((_, index) => {
         const button = document.createElement('button');
         button.textContent = index + 1;
@@ -160,15 +168,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showQuestion(0);
 
-    // Theme switch button
-    const themeSwitchButton = document.getElementById('theme-switch');
-    themeSwitchButton.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-        themeSwitchButton.querySelector('i').classList.toggle('fa-moon');
-        themeSwitchButton.querySelector('i').classList.toggle('fa-sun');
+    copyButton.addEventListener('click', () => {
+        copyToClipboard(keywordElement.textContent);
+        Swal.fire({
+            icon: 'success',
+            title: 'Copied!',
+            text: 'Keyword has been copied to clipboard.',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        });
     });
 
-    // Disable right-click and inspect
     document.addEventListener('contextmenu', (e) => e.preventDefault());
     document.addEventListener('keydown', (e) => {
         if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
