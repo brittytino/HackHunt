@@ -3,62 +3,62 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             question: "What is the main circuit board in a computer?",
             answer: "Motherboard",
-            keyword: "T: Futuristic Cityscapes\nE:4iU14KAclCEVtNNQbW7ZumdthuBZqGdeGkqcqSSfADs=\nK: Proclub123"
+            keyword: "Proclub123"
         },
         {
             question: "Which device is used to input text into a computer?",
             answer: "Keyboard",
-            keyword: "T: Fantasy Forests\nE: zDR2U51qv8bLTdQw9U7Neg==\nK: Proclub234"
+            keyword: "Proclub234"
         },
         {
             question: "What is the brain of the computer called?",
             answer: "CPU",
-            keyword: "T: Historical Landmarks\nE: Pom5SY8P7bml5hZq1n/Z5KQVx1f6QOtsNHDOclvz3pQ=\nK: Proclub345"
+            keyword: "Proclub345"
         },
         {
             question: "What is the permanent memory called?",
             answer: "ROM",
-            keyword: "T: Underwater Worlds\nE: 9b9bw8GTkkmv6mmAr1UQlP0abUOYDjeMslAi9Allg64=\nK: Proclub456"
+            keyword: "Proclub456"
         },
         {
             question: "What is a computer network’s unique address called?",
             answer: "IP",
-            keyword: "T: Steampunk Adventures\nE: tYodN8l9TYpQrx127593i4zj6WvVLL4u5993bXSg3ZE=\nK: Proclub567"
+            keyword: "Proclub567"
         },
         {
             question: "What does ‘USB’ stand for?",
             answer: "Universal Serial Bus",
-            keyword: "T: Space\nE: f9JD59wA6v8mqvwZ880MWA==\nK: Proclub678"
+            keyword: "Proclub678"
         },
         {
             question: "Which type of computer memory is used to store data temporarily?",
             answer: "RAM",
-            keyword: "T: Sky Islands\nE: ijjyv3nl6B0Q/h47BGZj0A==\nK: Proclub789"
+            keyword: "Proclub789"
         },
         {
             question: "What is a set of instructions that a computer follows to perform a task?",
             answer: "Algorithm",
-            keyword: "T: Urban Jungle\nE: acb283XY1JZPqI4NEipuYQ==\nK: Proclub891"
+            keyword: "Proclub891"
         },
         {
             question: "What is a wireless networking technology standard?",
             answer: "Wi-Fi",
-            keyword: "T: Pirate Adventures\nE: ZTgeMx9h4AmrWKeGG3BUm/6ikbYS83/XX7GxreE5udE=\nK: Proclub910"
+            keyword: "Proclub910"
         },
         {
             question: "What is a graphical representation of data using symbols and charts?",
             answer: "Graph",
-            keyword: "T: Dreamy Meadows\nE: Gv3AbHlxK2KZ9w8FRqacmQ==\nK: Proclub101"
+            keyword: "Proclub101"
         },
         {
             question: "What is a programming language known for its simplicity and readability?",
             answer: "Python",
-            keyword: "T: Crystal Golems\nE: pW8QKR5Wkn18e0IifHzN9g==\nK: Proclub111"
+            keyword: "Proclub111"
         },
         {
             question: "What is a device used to display output from a computer?",
             answer: "Monitor",
-            keyword: "T: Gladiator\nE: F/yRqp2jxSTvWhzgE+jD9g==\nK: Proclub112"
+            keyword: "Proclub112"
         }
     ];
 
